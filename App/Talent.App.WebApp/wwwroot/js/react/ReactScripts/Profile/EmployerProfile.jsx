@@ -75,6 +75,54 @@ export default class EmployeeProfile extends React.Component {
         this.init()
     }
 
+
+   /* loadData() {
+        var cookies = Cookies.get('talentAuthToken');
+        fetch('http://localhost:60290/profile/profile/getEmployerProfile', {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + cookies,
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                let employerData = null;
+                if (data.employer) {
+                    employerData = data.employer;
+                    // console.log("employerData", employerData);
+                }
+                this.updateWithoutSave(employerData);
+                this.init();
+            })
+            .catch(error => console.error('Error:', error));
+    }*/
+
+    /*
+        loadData(callback) {
+            console.log('Retrieving job listing data...');
+            var link = 'http://localhost:51689/listing/listing/getSortedEmployerJobs';
+            var cookies = Cookies.get('talentAuthToken');
+    
+            $.ajax({
+                url: link,
+                type: 'GET',
+                headers: {
+                    'Authorization': 'Bearer ' + cookies,
+                    'Content-Type': 'application/json'
+                },
+                success: function (data) {
+                    console.log('Job listing data retrieved successfully:', data.myJobs);
+                    this.setState({
+                        loadJobs: data.myJobs
+                    }, callback)
+                },
+                error: function (error) {
+                    console.error('Error:', error);
+                }
+            });
+        }*/
+
     updateForComponentId(componentId, newValues) {
         let data = {};
         data[componentId] = newValues;
